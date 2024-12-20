@@ -82,10 +82,10 @@
        musicButton.addEventListener('click', () => {
             if (isPlaying) {
             audioElement.play();
-            musicButton.textContent = "🔇"; // Cambiar ícono al reproducir  
+            musicButton.textContent = "🎵"; // Cambiar ícono al reproducir  
            }else {
             audioElement.pause();
-            musicButton.textContent = "🎵"; // Cambiar ícono al pausar
+            musicButton.textContent = "🔇"; // Cambiar ícono al pausar
            }
 
            isPlaying = !isPlaying; // Alternar estado
