@@ -73,32 +73,32 @@
     <!-- Botón flotante para controlar la música -->
     <button class="music-button" id="music-control">🎵</button>
 
-    <script>
-        const audioElement = document.getElementById('background-music');
-        const musicButton = document.getElementById('music-control');
-        let isPlaying = true;
+<script>
+    const audioElement = document.getElementById('background-music');
+    const musicButton = document.getElementById('music-control');
+    let isPlaying = false; // Inicializamos con la música pausada
 
-       // Función para alternar reproducción/pausa
-       musicButton.addEventListener('click', () => {
-            if (isPlaying) {
-            audioElement.play();
-            musicButton.textContent = "🎵"; // Cambiar ícono al reproducir  
-           }else {
+    // Función para alternar reproducción/pausa
+    musicButton.addEventListener('click', () => {
+        if (isPlaying) {
             audioElement.pause();
             musicButton.textContent = "🔇"; // Cambiar ícono al pausar
-           }
+        } else {
+            audioElement.play();
+            musicButton.textContent = "🎵"; // Cambiar ícono al reproducir
+        }
 
-           isPlaying = !isPlaying; // Alternar estado
-       });
+        isPlaying = !isPlaying; // Alternar estado
+    });
 
-        // Comprobar si la música está bloqueada por el navegador
-        document.addEventListener('DOMContentLoaded', () => {
-            if (audioElement.paused) {
-                audioElement.play().catch(() => {
-                    console.log('La reproducción automática está bloqueada.');
-                });
-            }
-        });
-    </script>
+    // Comprobar si la música está bloqueada por el navegador
+    document.addEventListener('DOMContentLoaded', () => {
+        if (audioElement.paused) {
+            audioElement.play().catch(() => {
+                console.log('La reproducción automática está bloqueada.');
+            });
+        }
+    });
+</script>
 </body>
 </html>
