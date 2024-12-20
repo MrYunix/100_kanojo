@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Novias</title>
+    <link rel="stylesheet" href="100.css">
+</head>
+<body>
+    <!-- Audio para música de fondo -->
+    <audio id="background-music" autoplay loop>
+        <source src="ending.mp3" type="audio/mpeg">
+        <source src="ending.ogg" type="audio/ogg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="cover-photo">
+            <img src="portada.jpg" alt="Portada de 100 Novias">
+        </div>
+
+        <div class="intro-section">
+            <h1>Bienvenido Martin-Kum</h1>
+            <p class="subtitle">Esta es una enciclopedia que recolecta toda la información de tus 100 novias</p>
+            <p class="intro-text">¿Quién será tu favorita?</p>
+            <a href="temporada.html" class="btn-main">Ver Temporadas</a>
+        </div>
+    </header>
+
+    <!-- Botón flotante para controlar la música -->
+    <button class="music-button" id="music-control">🎵</button>
+
+    <script>
+        const audioElement = document.getElementById('background-music');
+        const musicButton = document.getElementById('music-control');
+        let isPlaying = true;
+
+       // Función para alternar reproducción/pausa
+       musicButton.addEventListener('click', () => {
+           if (isPlaying) {
+            audioElement.play();
+            musicButton.textContent = "🎵"; // Cambiar ícono al reproducir  
+
+           } else {
+            audioElement.pause();
+            musicButton.textContent = "🔇"; // Cambiar ícono al pausar
+           }
+           isPlaying = !isPlaying; // Alternar estado
+       });
+
+        // Comprobar si la música está bloqueada por el navegador
+        document.addEventListener('DOMContentLoaded', () => {
+            if (audioElement.paused) {
+                audioElement.play().catch(() => {
+                    console.log('La reproducción automática está bloqueada.');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

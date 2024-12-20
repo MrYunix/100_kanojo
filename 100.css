@@ -1,0 +1,319 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Encabezado */
+header {
+    background-color: #e74c3c;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header .subtitle {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Introducción con fondo oscuro */
+header .intro-section {
+    background-color: rgba(46, 49, 49, 0.8);
+    padding: 40px 0;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+header .intro-text {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    color: #fefefe;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Botones principales */
+.btn-main {
+    padding: 15px 30px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+    margin-top: 20px;
+}
+
+.btn-main:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.5);
+}
+
+/* Sección de selección de temporada */
+.season-selection {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.season-selection .btn-main {
+    background-color: #f39c12;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.season-selection .btn-main:hover {
+    background-color: #f1c40f;
+    transform: scale(1.1);
+}
+
+/* Tarjetas de personajes */
+.character-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta automáticamente el número de columnas */
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.card {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    width: 100%;  /* Hace que la imagen ocupe el 100% del ancho del contenedor */
+    height: auto;  /* Mantiene la proporción de la imagen */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.card a {
+    text-decoration: none;
+    color: #333;
+}
+
+.card h3 {
+    margin-top: 10px;
+    font-size: 22px;
+}
+
+/* Detalles de las Novias */
+.novia-info {
+    display: flex;
+    justify-content: center; /* Centra los elementos dentro de la sección */
+    align-items: center; /* Centra verticalmente la imagen y el texto */
+    gap: 20px; /* Espaciado entre la imagen y el texto */
+    text-align: center; /* Asegura que el texto esté centrado cuando se visualiza en dispositivos pequeños */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+.novia-info img {
+    width: 100%; /* Ajuste flexible en el tamaño de la imagen */
+    max-width: 400px; /* Controla el tamaño máximo de la imagen */
+    height: auto;
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+}
+
+.details {
+    max-width: 600px;
+    text-align: left;
+}
+
+.details h3 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.details p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.details ul {
+    list-style-type: none;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.details ul li {
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .novia-info {
+        flex-direction: column; /* Alineación vertical en pantallas pequeñas */
+        text-align: center; /* Centra el texto */
+    }
+
+    .novia-info img {
+        max-width: 100%; /* Permite que la imagen ocupe el ancho completo */
+    }
+
+    .details {
+        max-width: 100%; /* Permite que el contenido ocupe todo el espacio disponible en pantallas pequeñas */
+        text-align: center; /* Centra el texto en dispositivos pequeños */
+    }
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: #2980b9;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #f1c40f;
+}
+
+/* Portada */
+.cover-container {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.cover-photo {
+    width: 100%;
+    max-width: 1203px;
+    margin: 0 auto;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cover-photo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cover-photo:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el botón flotante de música */
+.music-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #84dcff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.music-button:hover {
+    background-color: #c0392b;
+    transform: scale(1.1);
+}
+
+.music-button:active {
+    transform: scale(0.95);
+}
+
+/* Media Queries para Dispositivos Móviles */
+@media (max-width: 768px) {
+    header {
+        padding: 40px 20px;  /* Reducir el padding en móviles */
+    }
+
+    header h1 {
+        font-size: 30px;  /* Ajustar tamaño de fuente */
+    }
+
+    header .subtitle {
+        font-size: 18px;  /* Ajustar tamaño de fuente */
+    }
+
+    .season-selection {
+        flex-direction: column;  /* Hacer los botones en columna */
+        gap: 15px;
+    }
+
+    .character-cards {
+        grid-template-columns: 1fr;  /* Mostrar tarjetas en una sola columna */
+    }
+
+    .card h3 {
+        font-size: 18px;  /* Reducir el tamaño de fuente de los títulos */
+    }
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar a {
+        font-size: 16px;  /* Reducir tamaño de fuente de los enlaces */
+    }
+
+    .cover-photo {
+        max-width: 100%;  /* Asegurar que la foto de portada ocupe todo el ancho */
+    }
+
+    .music-button {
+        bottom: 10px;  /* Ajustar la posición del botón flotante */
+        right: 10px;
+    }
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primera Temporada - 100 Novias</title>
+    <link rel="stylesheet" href="100.css">
+</head>
+<body>
+    <!-- Audio para música de fondo -->
+    <audio id="background-music" autoplay loop>
+        <source src="opening.mp3" type="audio/mpeg">
+        <source src="opening.ogg" type="audio/ogg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>Primera Temporada</h1>
+        <p class="subtitle">Conoce más sobre las 6 novias de la primera temporada</p>
+        <br></br>
+        <div class="home">
+            <a href="index.html" class="btn-main">INICIO</a>
+        </div>
+    </header>
+
+
+    <!-- Tarjetas de personajes -->
+    <div class="character-cards">
+        <div class="card">
+            <a href="nv1.html">
+                <img src="chica1.jpg" alt="Novia 1/2">
+
+            </a>
+        </div>
+        <div class="card">
+            <a href="nv2.html">
+                <img src="chica2.jpg" alt="Novia 1/2">
+
+            </a>
+        </div>
+        <div class="card">
+            <a href="nv3.html">
+                <img src="chica3.jpg" alt="Novia 3">
+
+            </a>
+        </div>
+        <div class="card">
+            <a href="nv4.html">
+                <img src="chica4.jpg" alt="Novia 4">
+
+            </a>
+        </div>
+        <div class="card">
+            <a href="nv5.html">
+                <img src="chica5.jpg" alt="Novia 5">
+
+            </a>
+        </div>
+        <div class="card">
+            <a href="nv6.html">
+                <img src="chica6.jpg" alt="Novia 6">
+
+            </a>
+        </div>
+    </div>
+
+    <!-- Botón flotante para controlar la música -->
+    <button class="music-button" id="music-control">🎵</button>
+
+    <script>
+        const audioElement = document.getElementById('background-music');
+        const musicButton = document.getElementById('music-control');
+        let isPlaying = true;
+
+       // Función para alternar reproducción/pausa
+       musicButton.addEventListener('click', () => {
+           if (isPlaying) {
+            audioElement.play();
+            musicButton.textContent = "🎵"; // Cambiar ícono al reproducir  
+
+           } else {
+            audioElement.pause();
+            musicButton.textContent = "🔇"; // Cambiar ícono al pausar
+           }
+           isPlaying = !isPlaying; // Alternar estado
+       });
+
+        // Comprobar si la música está bloqueada por el navegador
+        document.addEventListener('DOMContentLoaded', () => {
+            if (audioElement.paused) {
+                audioElement.play().catch(() => {
+                    console.log('La reproducción automática está bloqueada.');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
