@@ -39,14 +39,14 @@
 
        // Función para alternar reproducción/pausa
        musicButton.addEventListener('click', () => {
-           if (isPlaying) {
-           audioElement.pause();
-           musicButton.textContent = "🎵"; // Cambiar ícono al pausar
- 
+            if (isPlaying) {
+            audioElement.play();
+            musicButton.textContent = "🎵"; // Cambiar ícono al reproducir  
            }else {
-           audioElement.play();
-           musicButton.textContent = "🔇"; // Cambiar ícono al reproducir 
+            audioElement.pause();
+            musicButton.textContent = "🔇"; // Cambiar ícono al pausar
            }
+
            isPlaying = !isPlaying; // Alternar estado
        });
 
